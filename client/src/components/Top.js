@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { getTopData } from '../actions'
 
 import TopChart from './TopChart';
+import './dashboard.css'
 
 class Top extends Component {
     state = {
@@ -67,10 +68,10 @@ class Top extends Component {
         return (
             <div>
                 <h2>Top Data</h2>
-                <button className="ui button medium" name="Spend" onClick={this.handleMetricToDisplay.bind(this)}>Spend</button>
-                <button className="ui button medium" name="Units" onClick={this.handleMetricToDisplay.bind(this)}>Units</button>
-                <button className="ui button medium" name="Visits" onClick={this.handleMetricToDisplay.bind(this)}>Visits</button>
-                <button className="ui button medium" name="Total_custs" onClick={this.handleMetricToDisplay.bind(this)}>Total_custs</button>
+                <button className="ui button medium sub_menu" name="Spend" onClick={this.handleMetricToDisplay.bind(this)}>Spend</button>
+                <button className="ui button medium sub_menu" name="Units" onClick={this.handleMetricToDisplay.bind(this)}>Units</button>
+                <button className="ui button medium sub_menu" name="Visits" onClick={this.handleMetricToDisplay.bind(this)}>Visits</button>
+                <button className="ui button medium sub_menu" name="Total_custs" onClick={this.handleMetricToDisplay.bind(this)}>Total_custs</button>
                 
                 <h3>{this.state.metricToDisplay}</h3>
 

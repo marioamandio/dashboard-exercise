@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import { getWeeklyData } from '../actions';
+
 import WeeklyChart from './WeeklyChart';
+import './dashboard.css'
 
 class Weekly extends Component {
     state = {
@@ -56,9 +58,9 @@ class Weekly extends Component {
         return (
             <div>
                 <h2 className="ui very relaxed">weekly Data</h2>
-                <button className="ui button medium" name="Aisle" onClick={this.handleSectionToDisplay.bind(this)}>Aisle</button>
-                <button className="ui button medium" name="Brand" onClick={this.handleSectionToDisplay.bind(this)}>Brand</button>
-                <button className="ui button medium" name="Offer" onClick={this.handleSectionToDisplay.bind(this)}>Offer</button>
+                <button className="ui button medium sub_menu" name="Aisle" onClick={this.handleSectionToDisplay.bind(this)}>Aisle</button>
+                <button className="ui button medium sub_menu" name="Brand" onClick={this.handleSectionToDisplay.bind(this)}>Brand</button>
+                <button className="ui button medium sub_menu" name="Offer" onClick={this.handleSectionToDisplay.bind(this)}>Offer</button>
                 {this.state.dataToDisplay.length !== 0 ? <WeeklyChart title={this.state.sectionToDisplay} data={this.state.dataToDisplay}/> : null}
             </div>
         );

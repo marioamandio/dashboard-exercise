@@ -175,8 +175,8 @@ import React from 'react'
             />
             <Tooltip />
             <Legend />
-            <Line dataKey="EXPOSED" dot={false} stroke="#F63107" />
-            <Line dataKey="CONTROL" dot={false} stroke="#074AF6"/>
+            <Line dataKey="EXPOSED" dot={false} type="monotoneX" stroke="#F63107" strokeWidth={2}/>
+            <Line dataKey="CONTROL" dot={false} type="monotoneX" stroke="#074AF6" strokeWidth={2}/>
           </LineChart>
         </ResponsiveContainer>
         </div>
