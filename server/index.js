@@ -2,18 +2,15 @@ const express = require('express');
 const mysql = require('mysql');
 const path = require('path')
 
+const databaseConfig = require('./database/config')
+
 
 const app = express()
 port = process.env.PORT || 3001;
 
 
 //DATABASE SETUP
-const connection = mysql.createConnection({
-    host     : 'localhost',
-    user     : 'root',
-    password : 'password',
-    database : 'sains'
-  });
+const connection = mysql.createConnection(databaseConfig);
 
 app.get('/weekly', async (req, res) => {
     connection.query("SELECT * FROM weekly", (err, result, fields) => {
