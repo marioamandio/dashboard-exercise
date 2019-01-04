@@ -21,7 +21,9 @@ const TopChart = (props) => {
                         interval="preserveStartEnd"
                         padding={{ bottom: 30 }}/>
                     <Tooltip />
-                    <Legend />
+                    <Legend 
+                        verticalAlign="top"
+                        fontSize="30"/>
                     <Bar 
                         dataKey={props.chart} 
                         barSize ={100}

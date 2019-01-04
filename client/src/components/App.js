@@ -28,7 +28,7 @@ class App extends Component {
     render() {
         return (
             <div className="ui center aligned container">
-                <h1>Sainsbury recruitment</h1>
+                <h1>Sainsbury's recruitment</h1>
                 <button onClick={this.onClickHandler} name="weekly" className="ui button huge">Weekly</button>
                 <button onClick={this.onClickHandler} name="top" className="ui button huge">top</button>
                 
