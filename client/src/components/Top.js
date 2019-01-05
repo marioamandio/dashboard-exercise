@@ -2,15 +2,14 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { getTopData } from '../actions'
 
-import TopChart from './TopChart';
+import TopCharts from './TopCharts';
 import './dashboard.css'
 
 class Top extends Component {
     state = {
         metricToDisplay: "Spend",
         allData: [],
-        dataToDisplay: [],
-        graphFilters: ["EXPOSED", "CONTROL", "UPLIFT", "PCT_UPLIFT"]
+        dataToDisplay: []
     }
 
     componentDidMount () {
@@ -56,12 +55,6 @@ class Top extends Component {
         this.handleDataToDisplay(metricToDisplay)
     }
 
-    renderTopCharts () {
-        return this.state.graphFilters.map((item, i) => {
-            return <TopChart key={i} data={this.state.dataToDisplay} chart={item}/>
-        })
-    }
-
 
 
     render() {
@@ -72,10 +65,8 @@ class Top extends Component {
                 <button className="ui button medium sub_menu" name="Units" onClick={this.handleMetricToDisplay.bind(this)}>Units</button>
                 <button className="ui button medium sub_menu" name="Visits" onClick={this.handleMetricToDisplay.bind(this)}>Visits</button>
                 <button className="ui button medium sub_menu" name="Total_custs" onClick={this.handleMetricToDisplay.bind(this)}>Total_custs</button>
-                
-                <h3>{this.state.metricToDisplay}</h3>
 
-                {this.state.dataToDisplay.length !== 0 ? this.renderTopCharts() : null}
+                {this.state.dataToDisplay.length !== 0 ? <TopCharts data={this.state.dataToDisplay} title={this.state.metricToDisplay}/> : null}
             </div>
         );
     }
