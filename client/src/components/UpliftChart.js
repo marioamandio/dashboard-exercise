@@ -12,7 +12,7 @@ const SecondBar = (props) => {
     })
 
     return (
-        <ResponsiveContainer width="95%" height={400}>
+        <ResponsiveContainer width="95%" height={200}>
             <BarChart data={data} margin={{top: 30, right: 20, left: 30, bottom: 0}}>
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="PRODUCT" 
@@ -21,8 +21,9 @@ const SecondBar = (props) => {
                     dy={5}/>
                 <YAxis
                     type="number"
-                    unit="%">
-                </YAxis>
+                    unit="%"
+                    tickInterval={5}
+                    allowDecimals />
                 <Tooltip />
                 <Legend 
                     verticalAlign="top"/>

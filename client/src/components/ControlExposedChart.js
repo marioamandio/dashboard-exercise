@@ -15,7 +15,7 @@ const ControlExposedChart = (props) => {
                     type="number" domain={['dataMin', 'dataMax']}/>
                 <Tooltip />
                 <Legend 
-                verticalAlign="top"/>
+                    verticalAlign="top"/>
                 <Bar 
                     dataKey="EXPOSED" 
                     stackId="a" 

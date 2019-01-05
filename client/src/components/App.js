@@ -13,12 +13,11 @@ class App extends Component {
     componentWillMount () {
         this.props.fetchWeeklyData();
         this.props.fetchTopData();
-
     }
 
     dataToDisplay = () => {
         if(this.state.display === "top" ) {
-            return < Top/>
+            return <Top />
         } else if(this.state.display === "weekly") {
             return <Weekly />
         }
@@ -26,6 +25,7 @@ class App extends Component {
 
     onClickHandler = (ev) => {
         let display = ev.target.name
+        
         this.setState(() => {
             return {
                 display
@@ -40,7 +40,6 @@ class App extends Component {
                 <h1>Sainsbury's recruitment</h1>
                 <button onClick={this.onClickHandler} name="weekly" className="ui button huge">Weekly</button>
                 <button onClick={this.onClickHandler} name="top" className="ui button huge">top</button>
-                
                 {this.dataToDisplay()}
             </div>
         );
