@@ -25,7 +25,8 @@ import React from 'react'
                         vertical={true}
                         stroke="#ebf3f0"/>
                     <Tooltip />
-                    <Legend />
+                    <Legend 
+                        verticalAlign="top"/>
                     <Line 
                         dataKey="EXPOSED" 
                         dot={false} 
