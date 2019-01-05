@@ -6,7 +6,7 @@ const TopChart = (props) => {
     const data = props.data
     if(props.chart === "PCT_UPLIFT") {
         props.data.forEach((item) => {
-            item.PCT_UPLIFT *= 100
+            item.PCT_UPLIFT *= 100;
         })
     }
     return (
@@ -26,7 +26,7 @@ const TopChart = (props) => {
                         fontSize="30"/>
                     <Bar 
                         dataKey={props.chart} 
-                        barSize ={100}
+                        barSize ={170}
                         fontFamily="sans-serif"
                         fill="#074AF6"
                         />
