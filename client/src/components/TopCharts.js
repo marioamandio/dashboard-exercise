@@ -3,7 +3,6 @@ import ControlExposedChart from "./ControlExposedChart";
 import UpliftChart from "./UpliftChart";
 
 const TopCharts = (props) => {
-    console.log(props)
     return (
         <div>
             <h2>{props.title}</h2>

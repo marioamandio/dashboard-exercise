@@ -1,10 +1,19 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
 import Top from './Top'
 import Weekly from './Weekly'
+
+import{ fetchWeeklyData, fetchTopData } from "../actions"
 
 class App extends Component {
     state = {
         display: 'weekly'
+    }
+
+    componentWillMount () {
+        this.props.fetchWeeklyData();
+        this.props.fetchTopData();
+
     }
 
     dataToDisplay = () => {
@@ -38,4 +47,4 @@ class App extends Component {
     }
 }
 
-export default App;
+export default connect(undefined, {fetchWeeklyData, fetchTopData})(App);

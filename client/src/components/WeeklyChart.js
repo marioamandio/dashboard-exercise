@@ -17,7 +17,7 @@ import React from 'react'
             <XAxis 
               dataKey="WEEK_COMMENCING"
               fontFamily="sans-serif"
-              dy="45"
+              dy={8}
             />
             <YAxis
               domain={['dataMin', 'dataMax']}

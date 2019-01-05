@@ -1,15 +1,6 @@
-import {ResponsiveContainer, BarChart, CartesianGrid, XAxis, YAxis, Tooltip, Legend, Bar, LabelList, Label} from 'recharts'
+import {ResponsiveContainer, BarChart, CartesianGrid, XAxis, YAxis, Tooltip, Legend, Bar, LabelList} from 'recharts'
 import React from 'react';
 
-
-const CustomTooltip = (props) => {
-    if(props.active) {
-        console.log(props)
-    }
-    return (
-        <div><span>Uplift:</span>{props.data}</div>
-    )
-}
 
 const SecondBar = (props) => {
     const { data } = props
@@ -26,10 +17,10 @@ const SecondBar = (props) => {
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="PRODUCT" 
                     fontFamily="sans-serif"
-                    tickSize
-                    dy="25"/>
+                    tickSize={5}
+                    dy={5}/>
                 <YAxis
-                    type="number" domain={['dataMin', 'dataMax']}
+                    type="number"
                     unit="%">
                 </YAxis>
                 <Tooltip />
