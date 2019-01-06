@@ -8,7 +8,6 @@ import './dashboard.css'
 class Weekly extends Component {
     state = {
         sectionToDisplay: "Aisle",
-        allData: [],
         dataToDisplay: []
     }
 
@@ -16,16 +15,8 @@ class Weekly extends Component {
         this.props.getWeeklyData()
     }
 
-    componentWillReceiveProps (nextProps) {
-        this.setState(() => {
-            return {
-                allData: nextProps.weeklyData
-            }
-        })
-    }
-
     componentDidUpdate() {
-        if(this.state.allData.length > 0 && this.state.dataToDisplay.length === 0) {
+        if(this.props.weeklyData.length > 0 && this.state.dataToDisplay.length === 0) {
             this.handleDataToDisplay()
         }
     }
@@ -38,7 +29,7 @@ class Weekly extends Component {
 
         this.setState(() => {
             return {
-                dataToDisplay: dataToDisplay
+                dataToDisplay
             }
         })
     }
@@ -61,7 +52,7 @@ class Weekly extends Component {
                 <button className="ui button medium sub_menu" name="Aisle" onClick={this.handleSectionToDisplay.bind(this)}>Aisle</button>
                 <button className="ui button medium sub_menu" name="Brand" onClick={this.handleSectionToDisplay.bind(this)}>Brand</button>
                 <button className="ui button medium sub_menu" name="Offer" onClick={this.handleSectionToDisplay.bind(this)}>Offer</button>
-                {this.state.dataToDisplay.length !== 0 ? <WeeklyChart title={this.state.sectionToDisplay} data={this.state.dataToDisplay}/> : null}
+                {this.state.dataToDisplay.length > 0 && <WeeklyChart title={this.state.sectionToDisplay} data={this.state.dataToDisplay}/>}
             </div>
         );
     }

@@ -11,7 +11,7 @@ class App extends Component {
     }
 
     componentWillMount () {
-        this.props.fetchWeeklyData();
+        this.props.fetchWeeklyData()
         this.props.fetchTopData();
     }
 

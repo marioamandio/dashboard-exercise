@@ -8,7 +8,6 @@ import './dashboard.css'
 class Top extends Component {
     state = {
         metricToDisplay: "Spend",
-        allData: [],
         dataToDisplay: []
     }
 
@@ -16,18 +15,8 @@ class Top extends Component {
         this.props.getTopData()
     }
 
-    componentWillReceiveProps (nextProps) {
-        if(this.state.allData.length === 0 ) {
-            this.setState(() => {
-                return {
-                    allData: nextProps.topData
-                }
-            })
-        }
-    }
-
     componentDidUpdate() {
-        if(this.state.allData.length > 0 && this.state.dataToDisplay.length === 0) {
+        if(this.props.topData.length > 0 && this.state.dataToDisplay.length === 0) {
             this.handleDataToDisplay()
         }
     }
@@ -39,7 +28,7 @@ class Top extends Component {
 
         this.setState(() => {
             return {
-                dataToDisplay: dataToDisplay
+                dataToDisplay
             }
         })
     }
@@ -66,7 +55,7 @@ class Top extends Component {
                 <button className="ui button medium sub_menu" name="Visits" onClick={this.handleMetricToDisplay.bind(this)}>Visits</button>
                 <button className="ui button medium sub_menu" name="Total_custs" onClick={this.handleMetricToDisplay.bind(this)}>Total_custs</button>
 
-                {this.state.dataToDisplay.length !== 0 ? <TopCharts data={this.state.dataToDisplay} title={this.state.metricToDisplay}/> : null}
+                {this.state.dataToDisplay.length > 0 && <TopCharts data={this.state.dataToDisplay} title={this.state.metricToDisplay}/>}
             </div>
         );
     }
