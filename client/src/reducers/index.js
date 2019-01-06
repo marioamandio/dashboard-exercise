@@ -5,7 +5,7 @@ const weeklyData = (state = [], action) => {
 
     switch(action.type) {
         case 'FETCH_WEEKLY_DATA':
-            return [...action.payload]
+            return action.payload
         
         case 'GET_WEEKLY_DATA':
             return [...state]
@@ -16,6 +16,7 @@ const weeklyData = (state = [], action) => {
 }
 
 const topData = (state = [], action) => {
+    
     switch(action.type) {
         case 'FETCH_TOP_DATA':
             return [...action.payload]

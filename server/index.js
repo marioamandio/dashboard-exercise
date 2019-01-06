@@ -12,14 +12,14 @@ port = process.env.PORT || 3001;
 //DATABASE SETUP
 const connection = mysql.createConnection(databaseConfig);
 
-app.get('/weekly', async (req, res) => {
+app.get('/api/weekly', async (req, res) => {
     connection.query("SELECT * FROM weekly", (err, result, fields) => {
         if (err) throw err;
         res.send(result)
     });
 })
 
-app.get('/top', async (req, res) => {
+app.get('/api/top', async (req, res) => {
     connection.query("SELECT * FROM top", (err, result, fields) => {
         if (err) throw err;
         res.send(result)

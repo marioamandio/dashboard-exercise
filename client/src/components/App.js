@@ -46,4 +46,4 @@ class App extends Component {
     }
 }
 
-export default connect(undefined, {fetchWeeklyData, fetchTopData})(App);
+export default connect(null, {fetchWeeklyData, fetchTopData})(App);

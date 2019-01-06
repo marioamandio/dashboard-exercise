@@ -58,7 +58,8 @@ class Weekly extends Component {
     }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, props) => {
+    console.log(props)
     return {
         weeklyData: state.weeklyData
     }

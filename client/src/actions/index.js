@@ -1,9 +1,9 @@
 import axios from 'axios'
 
-//Action creator
+//Weekly Actions
 export const fetchWeeklyData = () => {
-    return async function(dispatch, getState) {
-        const response = await axios.get('/weekly')
+    return async dispatch => {
+        const response = await axios.get('api/weekly')
 
         dispatch({type:"FETCH_WEEKLY_DATA", payload: response.data})
     }
@@ -15,9 +15,11 @@ export const getWeeklyData = () => {
     }
 }
 
+
+//Top Actions
 export const fetchTopData = () => {
-    return async function(dispatch, getState) {
-        const response = await axios.get('/top')
+    return async dispatch => {
+        const response = await axios.get('api/top')
 
         dispatch({type:"FETCH_TOP_DATA", payload: response.data})
     }
