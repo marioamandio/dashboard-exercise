@@ -2,10 +2,10 @@ const databaseConfig = {}
 
 if(process.env.NODE_ENV === 'production') {
 
-    databaseConfig.host = 'us-cdbr-iron-east-01.cleardb.net';
-    databaseConfig.user = 'b63208a7b9abad';
-    databaseConfig.password = '892a279d';
-    databaseConfig.database = 'heroku_e3178021a2fd2ac';
+    databaseConfig.host = process.env.DATABASE_HOST;
+    databaseConfig.user = process.env.DATABASE_USER;
+    databaseConfig.password = process.env.DATABASE_PASSWORD
+    databaseConfig.database = process.env.DATABASE_DATABASE;
 
 } else {
     databaseConfig.host = 'localhost';
