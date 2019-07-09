@@ -1,3 +1,6 @@
+const dotenv = require("dotenv");
+dotenv.config();
+
 const databaseConfig = {};
 
 if (process.env.NODE_ENV === "production") {
@@ -6,10 +9,11 @@ if (process.env.NODE_ENV === "production") {
   databaseConfig.password = process.env.DATABASE_PASSWORD;
   databaseConfig.database = process.env.DATABASE_DATABASE;
 } else {
-  databaseConfig.host = "localhost";
-  databaseConfig.user = "root";
-  databaseConfig.password = "password";
-  databaseConfig.database = "dashboard";
+  console.log(process.env);
+  databaseConfig.host = process.env.DATABASE_HOST;
+  databaseConfig.user = process.env.DATABASE_USER;
+  databaseConfig.password = process.env.DATABASE_PASSWORD;
+  databaseConfig.database = process.env.DATABASE_DATABASE;
 }
 
 module.exports = databaseConfig;
